@@ -38,6 +38,8 @@ var otraPersona2 = edwin2
 console.log(edwin2 == otraPersona2)
 // En esta parte vamos a comparar si los objetos pueden tomarse de la misma forma.
 
+// Este es el mismo ejemplo que vamos a usar para comparar si los objetos, 
+// En este caso vemos que si cambia posicion en memoria.
 var edwin3 = {
     ...edwin2,
 }
