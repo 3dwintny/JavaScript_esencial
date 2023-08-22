@@ -8,7 +8,7 @@ var edwin = {
 var eder = {
     name: 'Eder',
     last_name: 'Mejia',
-    age: 25,
+    age: 19,
     city: 'Quetzaltenango',
 };
 
@@ -18,3 +18,14 @@ function printObject(persona) {
 }
 
 printObject(edwin);
+
+// Reto
+
+function printObjectReto(persona) {
+    var {name} = persona
+    var {age} = persona
+    console.log("Hola, me llamo "+name + " y engo "+age+" años");
+}
+
+printObjectReto(edwin);
+printObjectReto(eder);
