@@ -12,5 +12,3 @@ var vidalia = new Persona('Vidalia', 'Gomez');
 
 console.log(edwin,vidalia);
 
-edwin.saludar();
-vidalia.saludar();

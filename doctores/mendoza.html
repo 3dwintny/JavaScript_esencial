@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+​
+<head>
+    <!-- RECTA dr_dramendoza-->
+    <meta charset="utf-8" />
+    <title>Receta</title>
+    <title>Receta</title>
+    <style>
+        /*SELECTORES*/
+        body {
+            font-family: helvetica;
+            color: #2f283a;
+        }
+​
+        p {
+            margin: 0;
+            font-size: 13px;
+            color: #2f283a;
+            text-align: justify;
+        }
+​
+        td {
+            /* padding: 0.3rem 0.3rem 0.3rem 0.5rem; */
+            /* font-size: 12px; */
+            font-size: 10px;
+            color: #2f283a;
+            width: auto;
+        }
+​
+        tr {
+            padding-top: 3em;
+        }
+​
+        /*CLASES*/
+​
+        .Indicaciones {
+            /* padding: 0.3rem 0.3rem 0.3rem 2rem; */
+            /* font-size: 10px; */
+            font-size: 8px;
+            color: #2f283a;
+            width: 80%;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+​
+        .Medicamentos {
+            height: 20px;
+        }
+​
+​
+        .tableD {
+            border-spacing: 0rem;
+            position: absolute;
+            width: 950px;
+            margin: 0.8rem 0.1rem 0.2rem 2rem;
+            vertical-align: top;
+            font-size: 8px !important;
+            top: 150px;
+            left: -160px;
+        }
+        .test{
+          position: absolute;
+          top:  480px;
+          left: 115px;
+          moz-transform: rotate(270deg);
+          -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+        }
+        .titulo {
+            height: 2px;
+            /* font-size: 10px; */
+            font-size: 8px;
+            margin: 0;
+            color: #2f283a;
+            margin-top: 2em;
+            margin-bottom: 0;
+        }
+​
+        .containerFecha {
+            position: absolute;
+            /* font-size: 16px; */
+            font-size: 14px;
+            margin-top: -5px;
+            top: 245px;
+            left: 165px;
+            moz-transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+​
+        .dia {
+            font-family: helvetica;
+            display: inline-block;
+            margin-left: 15px;
+        }
+​
+        .mes {
+            font-family: helvetica;
+            display: inline-block;
+            margin-left: 10px;
+        }
+​
+        .anio {
+            font-family: helvetica;
+            display: inline-block;
+            margin-left: 10px;
+        }
+​
+        .nombre {
+            font-family: helvetica;
+            position: absolute;
+            font-size: 14px; 
+            margin-top: 190px;
+            width: 320px;
+            top: 210px;
+            left: 45px;
+            moz-transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+​
+        .med {
+            font-size: 14px;
+        }
+​
+        .ind {
+            font-size: 16px;
+        }
+​
+        .Detalle {
+            page-break-inside: avoid;
+            position: relative;
+            height: 850px;
+            width: 760px;
+            margin-top: -160px;
+            margin-bottom: -190px;
+        }
+​
+        .prox_cita {
+            font-family: helvetica;
+            position: absolute;
+            font-size: 14px;
+            left: 50px;
+            moz-transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+​
+        .receta_bg {
+            position: absolute;
+            left: 135px;
+            width: 140mm; /* Ancho de media carta (140mm x 216mm) */
+    height: 216mm; /* Altura de media carta */
+            moz-transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+    </style>
+</head>
+​
+<body>
+    {% for drug in medicamentos %}
+    <section class="Detalle">
+      <img
+        class="receta_bg"
+        src="{{STATIC_URL}}img/dr_dramendoza.png"
+        alt="DR_ELIE_RECETA"
+      />
+      <section class="containerFecha">
+        <div class="dia">{{cons.fecha_consulta|date:'d'}}</div>
+        <div class="mes">
+          &nbsp;&nbsp;&nbsp;{{cons.fecha_consulta|date:'m'}}
+        </div>
+        <div class="anio">
+          &nbsp;&nbsp;{{cons.fecha_consulta|date:'Y'}}
+        </div>
+      </section>
+      <div class="nombre">
+        {{cons.patient.nombre}} {{cons.patient.apellido}}
+      </div>
+        <div class="test">
+        <table class="tableD">
+            {% for drugs in drug %}
+            <tr class="Medicamentos">
+                <td class="titulo">
+                    <p>• {{drugs.Drugs}}</p>
+                </td>
+            </tr>
+            <tr class="Medicamentos">
+                <td class="Indicaciones">
+                    Indicaciones<br />
+                    <p>{{drugs.Indicaciones}}</p>
+                    <br />
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+        </section>
+    </section>
+    {% endfor %}
+</body>
+​
+</html>

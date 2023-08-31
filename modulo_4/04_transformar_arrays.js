@@ -41,7 +41,7 @@ const cambio_altura2 = personas =>{
         altura: personas.altura*100,
     };
 }
-// la misma funcion anterior pero con arrow funcion, recordar que es equivalente.
+// la misma funcion anterior pero con arrow fun13cion, recordar que es equivalente.
 const cambio_altura_arrow = personas =>({
         ...personas,
         altura: personas.altura*100,
