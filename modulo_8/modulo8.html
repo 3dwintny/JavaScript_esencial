@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const edwin = {
+        name: 'Edwin',
+        lastname: 'Mejia',
+    
+    }
+    
+    function saludar(){
+        console.log(`Hola, mi nombre es ${this.name}`)
+    }
+    
+    const saludarAEdwin = saludar.bind(edwin)
+    
+    console.log(saludarAEdwin)
+    
+</script>
+</html>

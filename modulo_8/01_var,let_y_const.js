@@ -4,12 +4,15 @@ var edwin = {
     edad: 24
 }
 function esMayorDeEdad(persona){
-    if(persona.edad > 18)
+    //Var es una variable global, let es una variable local, desde solo poder ser usada en un if, y const es una variable que no cambia su valor. 
+    var mensaje 
+    const MAYORIA_DE_EDAD = 24
+    if(persona.edad > MAYORIA_DE_EDAD)
     {
-        var mensaje = 'Es mayor de edad'
+        mensaje = 'Es mayor de edad'
     }
     else{
-        var mensaje = 'Es menosr de edad'
+        mensaje = 'Es menosr de edad'
     }
     console.log(mensaje)
 }
